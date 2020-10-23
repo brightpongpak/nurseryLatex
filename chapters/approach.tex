@@ -23,6 +23,45 @@
 
 \section{โครงสร้างของระบบ}
 
+
+
+\subsection{Database Design}
+  \begin{center}
+    \includegraphics[width=\linewidth]{images/databaseDiagram.png}
+    \CIreply{รูปเล็ก มองไม่เห็น ควรทำเป็น landscape figure}
+  \end{center}
+    
+  ประเภทของฐานข้อมูลที่ใช้เป็นแบบ \CI{NOSQL}{check spelling} รายละเอียดของ Collection ในฐานข้อมูลของโครงงานนี้ มีดังนี้
+  \begin{itemize}
+    \item childs เก็บข้อมูลเกี่ยวข้องกับเด็กทั้งหมด 
+    \item father เก็บข้อมูลส่วนตัวของพ่อเด็ก
+    \item mother เก็บข้อมูลส่วนตัวของแม่เด็ก
+    \item custodian เก็บข้อมูลส่วนตัวของผู้ปกครองเด็ก
+    \item address เก็บข้อมูลที่อยู่ของเด็ก
+    \item users เก็บ Username Password สำหรับเข้าสู่ ระบบจัดการ Nursery 
+    \item buttonchecks เก็บข้อมูลสำหรับใช้เช็คว่าวันนี้มีการเช็คชื่อไปยัง
+    \item date\_for\_checks เก็บวันที่ใช้เช็คชื่อย้อนหลัง
+    \item rooms เก็บข้อมูลการเรียนของเด็กในห้องต่างๆ
+    \item attendances เก็บข้อมูลการเช็คชื่อทั้งหมด
+    \item gadgets เก็บข้อมูลการเช็คอุปกรณ์ของเด็กทั้งหมด
+    \item healths เก็บข้อมูลการเช็คสุขภาพของเด็กทั้งหมด
+    \item stock เก็บข้อมูลของใช้ทั้งหมดของเด็กใน Nursery 
+    \item payment เก็บข้อมูลประวัติการโอนเงินค่าเล่าเรียนของผู้ปกครองเด็ก
+
+  \end{itemize}
+\CIreply{ลงรายละเอียดในแต่ละ table ให้มากกว่านี้ และอธิบายลูกศรที่ปรากฎในแผนภาพด้วย}
+
+\subsection{XD Design}
+\begin{enumerate}
+  \item RegisterPage คือ หน้าแบบฟอร์มในการลงทะเบียนเด็กในการเข้าเรียน Nursery รูปที่~\ref{fig:register}
+  \item  ProfilePage  คือ หน้าที่ใช้ในการจัดการกับประวัติส่วนตัวของเด็ก สามารถแสดงข้อมูลและแก้ไขข้อมูลของเด็กแต่ละคนได้ รูปที่~\ref{fig:Profile} \ref{fig:ProfileTwo} \ref{fig:UpdateProfile}
+  \item  Attendance คือ หน้าเช็คชื่อเด็กรายวัน รูปที่~\ref{fig:Attendance} \ref{fig:CheckAttendance}
+  \item  Health คือ หน้าเช็คสุขภาพเด็กรายวัน รูปที่~\ref{fig:Health} \ref{fig:CheckHealth}
+  \item  Gadget คือ หน้าเช็คของเด็กรายวัน รูปที่~\ref{fig:Gadget} \ref{fig:CheckGadget}
+  \item  Stock คือ หน้าจัดการของใช้สำหรับเด็กทั้งหมดใน Nursery รูปที่~\ref{fig:Stock} \ref{fig:CheckStock}
+  \item  Payment คือ หน้าที่ใช้จัดการกับใบเสร็จ  ประวัติการจ่ายเงินค่าเล่าเรียน รูปที่~\ref{fig:Payment}
+\end{enumerate}
+
 \begin{figure}
   \begin{center}
   \includegraphics[width=\linewidth]{images/registerPage.png}
@@ -126,43 +165,6 @@
   \caption[Poem]{Payment Page}
   \label{fig:Payment}
   \end{figure}
-
-
-
-\subsection{Database Design}
-  \begin{center}
-    \includegraphics[width=\linewidth]{images/databaseDiagram.png}
-  \end{center}
-    
-  ประเภทของฐานข้อมูลที่ใช้เป็นแบบ NOSQL รายละเอียดของ Collection ในฐานข้อมูลของโครงงานนี้ มีดังนี้
-  \begin{itemize}
-    \item childs เก็บข้อมูลเกี่ยวข้องกับเด็กทั้งหมด 
-    \item father เก็บข้อมูลส่วนตัวของพ่อเด็ก
-    \item mother เก็บข้อมูลส่วนตัวของแม่เด็ก
-    \item custodian เก็บข้อมูลส่วนตัวของผู้ปกครองเด็ก
-    \item address เก็บข้อมูลที่อยู่ของเด็ก
-    \item users เก็บ Username Password สำหรับเข้าสู่ ระบบจัดการ Nursery 
-    \item buttonchecks เก็บข้อมูลสำหรับใช้เช็คว่าวันนี้มีการเช็คชื่อไปยัง
-    \item date\_for\_checks เก็บวันที่ใช้เช็คชื่อย้อนหลัง
-    \item rooms เก็บข้อมูลการเรียนของเด็กในห้องต่างๆ
-    \item attendances เก็บข้อมูลการเช็คชื่อทั้งหมด
-    \item gadgets เก็บข้อมูลการเช็คอุปกรณ์ของเด็กทั้งหมด
-    \item healths เก็บข้อมูลการเช็คสุขภาพของเด็กทั้งหมด
-    \item stock เก็บข้อมูลของใช้ทั้งหมดของเด็กใน Nursery 
-    \item payment เก็บข้อมูลประวัติการโอนเงินค่าเล่าเรียนของผู้ปกครองเด็ก
-
-  \end{itemize}
-
-\subsection{XD Design}
-\begin{enumerate}
-  \item RegisterPage คือ หน้าแบบฟอร์มในการลงทะเบียนเด็กในการเข้าเรียน Nursery รูปที่~\ref{fig:register}
-  \item  ProfilePage  คือ หน้าที่ใช้ในการจัดการกับประวัติส่วนตัวของเด็ก สามารถแสดงข้อมูลและแก้ไขข้อมูลของเด็กแต่ละคนได้ รูปที่~\ref{fig:Profile} \ref{fig:ProfileTwo} \ref{fig:UpdateProfile}
-  \item  Attendance คือ หน้าเช็คชื่อเด็กรายวัน รูปที่~\ref{fig:Attendance} \ref{fig:CheckAttendance}
-  \item  Health คือ หน้าเช็คสุขภาพเด็กรายวัน รูปที่~\ref{fig:Health} \ref{fig:CheckHealth}
-  \item  Gadget คือ หน้าเช็คของเด็กรายวัน รูปที่~\ref{fig:Gadget} \ref{fig:CheckGadget}
-  \item  Stock คือ หน้าจัดการของใช้สำหรับเด็กทั้งหมดใน Nursery รูปที่~\ref{fig:Stock} \ref{fig:CheckStock}
-  \item  Payment คือ หน้าที่ใช้จัดการกับใบเสร็จ  ประวัติการจ่ายเงินค่าเล่าเรียน รูปที่~\ref{fig:Payment}
-\end{enumerate}
 
 
 
