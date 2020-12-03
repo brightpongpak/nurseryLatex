@@ -189,81 +189,163 @@
 ระบบหลักๆที่ทางผู้พัฒนาใช้เป็นระบบแบบ Client-Server คือในทางฝั่ง client จะใช้ React ในการพัฒนาแบบ web browser ให้ทางผู้ใช้ส่ง requests มายังฝั่ง server เพื่อที่จะทำงานต้องที่ผู้ใช้ต้องการ ซึ่งฝั่ง server 
 จะพัฒนาโดย Express.js ทางฝั่งนี้ก็จะ query ข้อมูลจากทางฐานข้อมูลที่เก็บไว้บน MongoDB Atlas เมื่อได้รับข้อมูลแล้วจะทำการส่ง responses กลับไปยัง client เพื่อให้ผู้ใช้สามารถทำงานในส่วนที่ต้องการได้
 \subsection{APIs Docs}
-\begin{flushleft}
-  \begin{tabular}{|c|c|c|c|c|}
+\begin{landscape}
+  \begin{tabularx}{\linewidth}{|c|X|}
   \hline
   URL & Describe \\
+
+  \hline
+  \endhead
+  & รับค่าว่าเลือกห้องไหน แล้วส่งข้อมูลมาให้ client ว่าเด็กห้องนี้มีใครอยู่บ้าง
+  \\ {/api/child/show/atRooms/} & Data Transfer
+  \\ &Client: \{room:String\}
+     Server:\{child:[childs]\}
+  \\
+  \hline
+  &รับค่า child\_id แล้วส่งข้อมูลเกี่ยวกับพ่อแม่ ผู้ปกครอง ทางการแพทย์ของเด็กมายัง client
+  \\ {/api/child/profileTwo/show/}&Data Transfer
+  \\ &Client: \{id:ObjectId\}
+  Server:\{ 
+    child:\{childs\}, room:\{rooms\}
+  \}
+  \\
+  \hline
+  & รับค่า น้ำหนัก ส่วนสูง ชื่อเล่น ห้อง ชื่อพ่อชื่อแม่ ชื่อโรงพยาบาลที่ใช้บริการยามฉุกเฉิน
+  แล้วทำการupdate  
+  \\ {/api/child/updateProfile/} & Data Transfer 
+  \\ &Client:\{
+    weight:Double,height:Double,
+    nickname:String,rooms:String,
+    \}
+  Server:\{success:Boolean\}
+    \\
+  \hline
+  & รับค่า pathของรูป วัน และ child\_id มาแล้วทำการเก็บไว้ที่ idที่ส่งมา
+  \\ {/api/child/upload/}&Data Transfer
+  \\ &Client:\{
+    id:ObjectId,
+    date:Date,
+    url:String
+   \}
+  Server:\{
+    success:Boolean
+   \} \\
+   
+  \hline
+  & รับค่าเดือนที่เลือกจาก client ส่งไปยังหลังบ้านแล้วหลังบ้านจะทำการส่งผลลัพธ์เช็คสุขภาพทั้งหมดของเดือนนั้นกลับมาทั้งหมด
+  \\
+  {/api/health/showList}& Data Transfer
+  \\ &Client: \{month:String\}
+  Server: \{health:[healths]\}
+  \\ 
+  \hline
+
+  & รับค่า id เด็ก, ข้อมูลสุขภาพ และวันที่เช็ค ส่งมายังหลังบ้านเพื่อทำการบันทึกข้อมูลลงในฐานข้อมูล
+  \\
+  {/api/health/chooseChild/checkHealth/} & Data Transfer
+  \\ &Client: \{id:ObjectId, date:Date, check\_outside:Object, check\_inside:Object\}
+  \\ &Server: \{checkbutton:Boolean\}
+  \\
+  \hline
+
+  
+  &รับ id , วันที่เช็ค, ข้อมูลสุขภาพ ของเด็กและทำการส่งมายังหลังบ้านเพื่อทำการแก้ไขข้อมูล จากนั้นจะมีการส่งstatusกลับไปยังหน้าบ้าน
+  \\
+  {/api/health/update/checkHealth}&Data Transfer
+  \\ &Client: \{id:ObjectId, date:Date, check\_inside:Object, check\_outside:Object\}
+  \\ &Server: \{status: String\}
+  \\
+  \hline
+   & รับค่าเดือนที่เลือกจาก client ส่งไปยังหลังบ้าน แล้วหลังบ้านจะทำการส่งผลลัพธ์เช็คของทั้งหมดของเดือนนั้นกลับมาทั้งหมด
+  \\
+  
+  {/api/gadget/showList}& Data Transfer
+  \\ &Client: \{month:String\}
+  Server:\{gadget:[gadgets]\}
+  \\ 
+  \hline
+
+    
+
+  \hline
+  
+   & รับค่า child\_id วันที่เช็ค ข้อมูลเช็คของ 
+   แล้วทำการส่งไปยังหลังบ้านเพื่อนำข้อมูลเหล่านี้ไป
+   เก็บยังฐานข้อมูล แล้วจะส่งสถานะการเช็คกลับไป
+  \\
+  
+  {/api/gadget/checkStuff}& Data Transfer
+  \\ &Client: \{id:ObjectId, date:Date, checkList:Object\}
+  Server: \{checkbutton:Boolean\}
+  \\ 
+  \hline
+
+  \hline
+  & รับ id , วันที่เช็ค, ข้อมูลเช็คของ ของเด็กและทำการ
+  ส่งมายังหลังบ้านเพื่อทำการแก้ไขข้อมูล 
+  จากนั้นจะมีการส่งstatusกลับไปยังหน้าบ้าน
+  \\ {/api/gadget/update/checkGadget} & Data Transfer
+  \\ & Client: \{id:ObjectId, date:Date, checkList:Object\}
+  Server: \{status:String\} \\
+  \hline
+
   \hline
   
    & รับค่า room มาแล้วส่งข้อมูลเด็กในห้องนั้นไปให้ client
   \\
   
   {/api/room/enrollRoom/}& Data Transfer
-  
-  \\ &Client: \{room:String ,startDate:Date ,childId:ObjectId\}
-  \\ &Server: Not response
+  \\ &Client: \{room:String ,startDate:Date, childId:ObjectId\}
+  Server: Not response
   \\ 
   \hline
 
   \hline
   
    & รับค่า id เด็กและวันที่ออกจากห้องมา แล้วส่งไปยังหลังบ้านให้ทำ
-   
-  \\ & การแก้ไขข้อมูลให้เด็กคนนี้ออกจากห้องเรียนนี้ในวันที่ส่งมา 
-  \\ & เมื่อทำการแก้ไขเสร็จสิ้น จะทำการส่ง
-  \\ {/api/room/quitRoom}&    สถานะ success กลับไปยัง client\\
+   การแก้ไขข้อมูลให้เด็กคนนี้ออกจากห้องเรียนนี้ในวันที่ส่งมา 
+   เมื่อทำการแก้ไขเสร็จสิ้น จะทำการส่ง
+  \\ {/api/room/quitRoom}& สถานะ success กลับไปยัง client\\
   & Data Transfer
-  
-  \\ &Client: \{endDate:Date ,childId:ObjectId\}
-  \\ &Server: \{success:Boolean\}
+  \\ &Client: \{endDate:Date, childId:ObjectId\}
+  Server: \{success:Boolean\}
   \\ 
   \hline
 
   \hline
   
-   & รับค่า วันที่เช็คชื่อมา , ห้อง แล้วจะส่งเด็ก
-   
+   & รับค่า วันที่เช็คชื่อมา , ห้อง แล้วจะส่งเด็ก 
+   ที่ไม่มาในห้องที่เลือกไปให้ client
   \\
-  & ที่ไม่มาในห้องที่เลือกไปให้ client
-  \\
-  
   {/api/attendance/show/childAbsent}& Data Transfer
-  
-  \\ &   Client: \{date:Date , room:String\}
-
-  \\ &   Server: \{childAbsent:[ childs ]\}
-
+  \\ &Client: \{date:Date, room:String\}
+  Server: \{childAbsent:[childs]\}
   \\ 
   \hline
 
   \hline
    & รับค่า child\_id วันที่เลือก สถานะว่ามาหรือไม่มา
-  \\
-  & ทำการ update ค่า attend ที่ child\_idและวันที่เลือกตรงกับค่าที่ส่งมา
+   ทำการ update ค่า attend ที่ child\_idและวันที่เลือกตรงกับค่าที่ส่งมา
   \\  
   {/api/attendance/update/checklist}& Data Transfer
-  \\ &   Client: \{id:ObjectId, date:Date, attend:Boolean\}
-  \\ &   Server: \{status:String\}
+  \\ &Client: \{id:ObjectId, date:Date, attend:Boolean\}
+  Server: \{status:String\}
   \\ 
   \hline
 
   \hline
    & รับค่า child\_id วันที่เช็ค สถานะว่ามาหรือไม่มา
-   
-  \\
-  & ทำการสร้างเป็นประวัติการเช็คชื่อของ child\_id
-  \\ 
-  & ในวันที่เลือก สถานะที่ส่งมา เก็บไว้ใน collection attendances
-  
+    ทำการสร้างเป็นประวัติการเช็คชื่อของ child\_id
+  ในวันที่เลือก สถานะที่ส่งมา เก็บไว้ใน collection attendances
   \\
   {/api/attendance/checklist}& Data Transfer
-  \\ &   Client: \{id:ObjectId, date:Date , attend:Boolean\}
-  \\ &   Server: \{checkbutton: Boolean\}
+  \\ &Client: \{id:ObjectId, date:Date, attend:Boolean\}
+  Server: \{checkbutton:Boolean\}
   \\ 
   \hline
 
-  \end{tabular}
-\end{flushleft}
+  \end{tabularx}
+\end{landscape}
 \section{ขั้นตอนการดำเนินงาน}
 \subsection{Discovery}
 \begin{itemize}
