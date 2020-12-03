@@ -435,7 +435,7 @@
   \begin{flushright}
     \begin{tabular}{@{}cl@{}}
       \\[1cm]
-      \dotuline{\hspace*{3.5in}} &
+      % \dotuline{\hspace*{3.5in}} &
         \ifcpe หัวหน้าภาควิชาวิศวกรรมคอมพิวเตอร์\else Department chair\fi\\
       (\ifcpe\@deptChairTH\else\@deptChairEN\fi)
     \end{tabular}
@@ -445,12 +445,12 @@
   \begin{flushright}
     \begin{tabular}{@{}cl@{}}
       \\[1cm]
-      \dotuline{\hspace*{3.5in}} &
+      \dotuline{} &
         \ifcpe ประธานกรรมการ\else Main advisor / Chair\fi \\
       (\ifcpe\@advisorTH\else\@advisorEN\fi)
       \setcounter{@committeeIdx}{0}%
       \@listcommittee{\ifcpe TH\else EN\fi}{\\[1cm]
-        \dotuline{\hspace*{3.5in}} & \ifcpe กรรมการ\else Commitee member\fi \\
+        % \dotuline{\hspace*{3.5in}} & \ifcpe กรรมการ\else Commitee member\fi \\
         (}
       {)}%
     \end{tabular}
