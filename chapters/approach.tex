@@ -188,7 +188,82 @@
 
 ระบบหลักๆที่ทางผู้พัฒนาใช้เป็นระบบแบบ Client-Server คือในทางฝั่ง client จะใช้ React ในการพัฒนาแบบ web browser ให้ทางผู้ใช้ส่ง requests มายังฝั่ง server เพื่อที่จะทำงานต้องที่ผู้ใช้ต้องการ ซึ่งฝั่ง server 
 จะพัฒนาโดย Express.js ทางฝั่งนี้ก็จะ query ข้อมูลจากทางฐานข้อมูลที่เก็บไว้บน MongoDB Atlas เมื่อได้รับข้อมูลแล้วจะทำการส่ง responses กลับไปยัง client เพื่อให้ผู้ใช้สามารถทำงานในส่วนที่ต้องการได้
+\subsection{APIs Docs}
+\begin{flushleft}
+  \begin{tabular}{|c|c|c|c|c|}
+  \hline
+  URL & Describe \\
+  \hline
+  
+   & รับค่า room มาแล้วส่งข้อมูลเด็กในห้องนั้นไปให้ client
+  \\
+  
+  {/api/room/enrollRoom/}& Data Transfer
+  
+  \\ &Client: \{room:String ,startDate:Date ,childId:ObjectId\}
+  \\ &Server: Not response
+  \\ 
+  \hline
 
+  \hline
+  
+   & รับค่า id เด็กและวันที่ออกจากห้องมา แล้วส่งไปยังหลังบ้านให้ทำ
+   
+  \\ & การแก้ไขข้อมูลให้เด็กคนนี้ออกจากห้องเรียนนี้ในวันที่ส่งมา 
+  \\ & เมื่อทำการแก้ไขเสร็จสิ้น จะทำการส่ง
+  \\ {/api/room/quitRoom}&    สถานะ success กลับไปยัง client\\
+  & Data Transfer
+  
+  \\ &Client: \{endDate:Date ,childId:ObjectId\}
+  \\ &Server: \{success:Boolean\}
+  \\ 
+  \hline
+
+  \hline
+  
+   & รับค่า วันที่เช็คชื่อมา , ห้อง แล้วจะส่งเด็ก
+   
+  \\
+  & ที่ไม่มาในห้องที่เลือกไปให้ client
+  \\
+  
+  {/api/attendance/show/childAbsent}& Data Transfer
+  
+  \\ &   Client: \{date:Date , room:String\}
+
+  \\ &   Server: \{childAbsent:[ childs ]\}
+
+  \\ 
+  \hline
+
+  \hline
+   & รับค่า child\_id วันที่เลือก สถานะว่ามาหรือไม่มา
+  \\
+  & ทำการ update ค่า attend ที่ child\_idและวันที่เลือกตรงกับค่าที่ส่งมา
+  \\  
+  {/api/attendance/update/checklist}& Data Transfer
+  \\ &   Client: \{id:ObjectId, date:Date, attend:Boolean\}
+  \\ &   Server: \{status:String\}
+  \\ 
+  \hline
+
+  \hline
+   & รับค่า child\_id วันที่เช็ค สถานะว่ามาหรือไม่มา
+   
+  \\
+  & ทำการสร้างเป็นประวัติการเช็คชื่อของ child\_id
+  \\ 
+  & ในวันที่เลือก สถานะที่ส่งมา เก็บไว้ใน collection attendances
+  
+  \\
+  {/api/attendance/checklist}& Data Transfer
+  \\ &   Client: \{id:ObjectId, date:Date , attend:Boolean\}
+  \\ &   Server: \{checkbutton: Boolean\}
+  \\ 
+  \hline
+
+  \end{tabular}
+\end{flushleft}
 \section{ขั้นตอนการดำเนินงาน}
 \subsection{Discovery}
 \begin{itemize}
