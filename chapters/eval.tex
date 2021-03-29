@@ -5,58 +5,118 @@
 \fi}
 
 
-\section{ระบบต้องทำงานได้ทั้งหมดดังนี้}
-\paragraph{การกรอกใบสมัคร}
+\begin{figure}
+    \begin{center}
+      \includegraphics[width=\linewidth]{images/Payment.png}
+    \end{center}
+    \caption[Poem]{หน้าระบบบัญชีใหม่}
+    \label{fig:PaymentNew}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+      \includegraphics[width=\linewidth]{images/Stock.png}
+    \end{center}
+    \caption[Poem]{หน้าระบบคลักสินค้าใหม่}
+    \label{fig:StockNew}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+      \includegraphics[width=\linewidth]{images/Profile.png}
+    \end{center}
+    \caption[Poem]{หน้าประวัติเก่า}
+    \label{fig:ProfileNew}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+      \includegraphics[width=\linewidth]{images/slipPage.png}
+    \end{center}
+    \caption[Poem]{ใบเสร็จ}
+    \label{fig:Slip}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+      \includegraphics[width=\linewidth]{images/invoicePage.png}
+    \end{center}
+    \caption[Poem]{ใบแจ้งยอด}
+    \label{fig:invoice}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+      \includegraphics[width=\linewidth]{images/UpdatePayment.png}
+    \end{center}
+    \caption[Poem]{สามารถเลือกแนบสลิปจากภายนอกได้}
+    \label{fig:UpdatePay}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+      \includegraphics[width=\linewidth]{images/CreatePayment.png}
+    \end{center}
+    \caption[Poem]{เพิ่มรายการบัญชี}
+    \label{fig:CreatePay}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+      \includegraphics[width=\linewidth]{images/handleStock.png}
+    \end{center}
+    \caption[Poem]{แก้ไขจำนวนสินค้า}
+    \label{fig:handlestock}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+      \includegraphics[width=\linewidth]{images/historyStock.png}
+    \end{center}
+    \caption[Poem]{ประวัติการตัดStock}
+    \label{fig:historystock}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+      \includegraphics[width=\linewidth]{images/editPrice.png}
+    \end{center}
+    \caption[Poem]{แก้ราคาสินค้า}
+    \label{fig:editprice}
+\end{figure}
+
+
+\section{Feedback จากทางาง nursery}
+\paragraph{ระบบบัญชี}
 \begin{itemize}
-    \item การกรอกใบสมัครจะต้องครบถ้วนสมบูรณ์ตามเงื่อนไขที่กำหนดไว้
-    \begin{itemize}
-        \item วิธีการทดสอบคือ ต้องกรอกชื่อจริง ชื่อเล่น วันเดือนปีเกิด ไม่เช่นนั้น จะไม่สามารถดำเนินการต่อไปในขั้นตอนถัดไปได้ จำเป็นต้องกรอกให้ครบถ้วนก่อนเสมอ
-    \end{itemize}
+    \item ยังไม่มีใบแจ้งยอดและใบเสร็จ
+    \item ใบเสร็จไม่สามารถแนบสลิปจากภายนอกได้
+    \item การเพิ่มรายการบัญชีไม่สามารถเลือกประเภทของสิ่งของต่างๆได้ 
 \end{itemize}
-\paragraph{การเช็คชื่อ}
+\paragraph{ระบบคลังสินค้า}
 \begin{itemize}
-    \item ต้องสามารถเช็คชื่อในแต่ละวันและเช็คชื่อย้อนหลังได้
-    \begin{itemize}
-        \item ขั้นตอนการทดสอบการเช็คชื่อคือ เช็คชื่อเด็กในแต่ละวัน  ถ้าเช็คว่ามาก็จะมีสัญลักษณ์เช็คถูกขึ้นมาใน column ของวันที่เช็ค ในแถวของเด็กคนนั้น  หากเด็กคนนั้นไม่มา ก็จะมีสัญลักษณ์ขีดแดทขึ้นบนช่องนั้น
-        \item ขั้นตอนการทดสอบการเช็คชื่อย้อนหลังคือ  เมื่อต้องการแก้ไขให้เด็กคนหนึ่งที่มาเรียนสายมากๆ  จนทำให้คุณครูลืมเช็คชื่อ  จึงต้องทำการเช็คชื่อย้อนหลังในวันถัดๆไป  เพื่อแก้ไขให้เด็กที่มาสายคนนั้นในหน้าแสดงผลให้สัญลักษณ์ขีดแดท กลายเป็น สัญลักษณ์เช็คถูก  โดยจะตรวจสอบด้วยการเลือกวันที่ต้องการเช็คย้อนหลังแล้วทำการเช็คชื่อ  ถ้าหากระบบทำงานได้ปกติ  จะต้องได้ผลลัพธ์แบบที่กล่าวไว้ข้างต้น
-    \end{itemize}
+    \item ราคาของสิ้นค้าไม่สามารถแก้ไขได้
+    \item ไม่สามารถหักจำนวนของสินค้าอัตโนมัติได้
 \end{itemize}
-\paragraph{การตรวจสุภาพประจำวัน}
+
+\section{แก้ไขตาม Feedback}
+\paragraph{ระบบบัญชี}
 \begin{itemize}
-    \item สามารถเช็คสุขภาพประจำวันได้ครบถ้วนตามที่ระบุไว้และสามารถเช็คย้อนหลังได้
-    \begin{itemize}
-        \item ขั้นตอนการทดสอบคือ เมื่อมีการเช็คของ ของเด็กแต่ละคน  เมื่อเช็คว่าเอามาใน column ของวันที่เช็ค ในแถวของเด็กนั้น จะมีสัญลักษณ์ เช็คถูกแสดงในช่องนั้น  ถ้าหากไม่ได้เอามาก็จะแสดงสัญลักษณ์ ขีดแดทที่ช่องนั้น
-    \end{itemize}
+    \item ออกแบบให้ใช้งานได้ง่ายมากยิ่งขึ้น (รูปที่~\ref{fig:PaymentNew})
+    \item เพิ่มใบเสร็จและใบแจ้งยอด (รูปที่~\ref{fig:Slip}, \ref{fig:invoice})
+    \item ใบเสร็จสามารถแนบสลิปจากภายนอกได้ (รูปที่~\ref{fig:UpdatePay})
+    \item การเพิ่มรายการบัญชีสามารถเลือกประเภทของสิ่งของต่างๆได้ (รูปที่~\ref{fig:CreatePay})
 \end{itemize}
-\paragraph{การตรวจอุปกรณ์ประจำวัน}
+\paragraph{ระบบคลังสิ้นค้า}
 \begin{itemize}
-    \item สามารถตรวจเช็คอุปกรณ์ประจำวันได้ครบถ้วนตามที่ระบุไว้และสามารถเช็คย้อนหลังได้
-    \begin{itemize}
-        \item ขั้นตอนการทดสอบคือ เมื่อตรวจสอบอุปกรณ์ของเด็กแต่ละคนจนเสร็จแล้ว  เราสามารถเข้าไปแก้ไขได้โดย  เมื่อแก้ไขเสร็จแล้ว  
-        หน้าแสดงผลก็ควรเปลี่ยนไปตามที่แก้ไขด้วยเช่นกัน        
-    \end{itemize}
+    \item ออกแบบให้ใช้งานได้ง่ายมากยิ่งขึ้น (รูปที่~\ref{fig:StockNew})
+    \item ราคาของสินค้าสามารถแก้ไขได้ (รูปที่~\ref{fig:editprice})
+    \item สามารถหักจำนวนของสินค้าอัตโนมัติได้ (รูปที่~\ref{fig:handlestock}, \ref{fig:historystock})
 \end{itemize}
-\paragraph{แสดงประวัติส่วนตัว}
+\paragraph{หน้าประวัติ}
 \begin{itemize}
-    \item สามารถแสดงข้อมูลได้ครบถ้วน
-    \begin{itemize}
-        \item ขั้นตอนการทดสอบคือ ตรวจเช็คข้อมูลที่แสดงผลดูว่าข้อมูลนั้นๆ ไม่ขาดตกบกพร่อง สามารถเรียกดูรายละเอียดต่างๆได้
-    และสามารถแก้ไขข้อมูลที่มีการเปลี่ยนของเด็กได้ เช่น น้ำหนัก  ส่วนสูง  ห้องเรียน         
-    \end{itemize}
+    \item แก้ไขให้ใช้งานง่ายมากยิ่งขึ้น (รูปที่~\ref{fig:ProfileNew})
 \end{itemize}
-\paragraph{แสดงสิ้นค้าในคลัง}
-\begin{itemize}
-    \item สามารถแสดงสินค้าทั้งหมดในคลังได้และสามารถแก้ไขจํานวนสิ้นค้าในคลังได้
-    \begin{itemize}
-        \item ขั้นตอนการทดสอบคือ  เมื่อมีสินค้าในคลังที่ถูกสั่งซื้อไปแล้ว จำนวนสิ้นค้าในคลังควรจะลดลง ถ้ามีสิ้นค้าเข้ามาเพิ่มสินค้าในคลังก็ควรจะเพิ่มเช่นกัน  อีกทั้งเราสามารถลดและเพิ่มจำนวนของสินค้าได้ตามต้องการ 	
-    \end{itemize}
-\end{itemize}
-\paragraph{การเก็บประวัติการจ่ายเงิน}
-\begin{itemize}
-    \item สามารถเก็บประวัติการจ่ายเงินได้และสามารถเรียกข้อมูลมาดูได้
-    \begin{itemize}
-        \item ขั้นตอนการทดสอบคือ เมื่อมีการจ่ายเงินค่าเทอมเราสามารถเก็บประวัติการจ่ายเงินนั้นแล้ว  นำมาแสดงว่าบุคคลนั้นจ่ายเงินไปรึยังโดยแสดงผ่านหน้าบัญชี (Payment page)
-    \end{itemize}
-\end{itemize}
+
 
 
