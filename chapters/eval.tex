@@ -4,89 +4,9 @@
 \ifcpe การประเมินระบบ\else System Evaluation\fi
 \fi}
 
-
-\begin{figure}
-    \begin{center}
-      \includegraphics[width=\linewidth]{images/Payment.png}
-    \end{center}
-    \caption[Poem]{หน้าระบบบัญชีใหม่}
-    \label{fig:PaymentNew}
-\end{figure}
-
-\begin{figure}
-    \begin{center}
-      \includegraphics[width=\linewidth]{images/Stock.png}
-    \end{center}
-    \caption[Poem]{หน้าระบบคลักสินค้าใหม่}
-    \label{fig:StockNew}
-\end{figure}
-
-\begin{figure}
-    \begin{center}
-      \includegraphics[width=\linewidth]{images/Profile.png}
-    \end{center}
-    \caption[Poem]{หน้าประวัติเก่า}
-    \label{fig:ProfileNew}
-\end{figure}
-
-\begin{figure}
-    \begin{center}
-      \includegraphics[width=\linewidth]{images/slipPage.png}
-    \end{center}
-    \caption[Poem]{ใบเสร็จ}
-    \label{fig:Slip}
-\end{figure}
-
-\begin{figure}
-    \begin{center}
-      \includegraphics[width=\linewidth]{images/invoicePage.png}
-    \end{center}
-    \caption[Poem]{ใบแจ้งยอด}
-    \label{fig:invoice}
-\end{figure}
-
-\begin{figure}
-    \begin{center}
-      \includegraphics[width=\linewidth]{images/UpdatePayment.png}
-    \end{center}
-    \caption[Poem]{สามารถเลือกแนบสลิปจากภายนอกได้}
-    \label{fig:UpdatePay}
-\end{figure}
-
-\begin{figure}
-    \begin{center}
-      \includegraphics[width=\linewidth]{images/CreatePayment.png}
-    \end{center}
-    \caption[Poem]{เพิ่มรายการบัญชี}
-    \label{fig:CreatePay}
-\end{figure}
-
-\begin{figure}
-    \begin{center}
-      \includegraphics[width=\linewidth]{images/handleStock.png}
-    \end{center}
-    \caption[Poem]{แก้ไขจำนวนสินค้า}
-    \label{fig:handlestock}
-\end{figure}
-
-\begin{figure}
-    \begin{center}
-      \includegraphics[width=\linewidth]{images/historyStock.png}
-    \end{center}
-    \caption[Poem]{ประวัติการตัดStock}
-    \label{fig:historystock}
-\end{figure}
-
-\begin{figure}
-    \begin{center}
-      \includegraphics[width=\linewidth]{images/editPrice.png}
-    \end{center}
-    \caption[Poem]{แก้ราคาสินค้า}
-    \label{fig:editprice}
-\end{figure}
-
-
-\section{Feedback จากทางาง nursery}
+\section{Feedback จากทาง Nursery}
+(รูปที่~\ref{fig:Feedback})
+สรุปเป็นหัวข้อหลักๆได้ดังต่อนี้
 \paragraph{ระบบบัญชี}
 \begin{itemize}
     \item ยังไม่มีใบแจ้งยอดและใบเสร็จ
@@ -102,21 +22,64 @@
 \section{แก้ไขตาม Feedback}
 \paragraph{ระบบบัญชี}
 \begin{itemize}
-    \item ออกแบบให้ใช้งานได้ง่ายมากยิ่งขึ้น (รูปที่~\ref{fig:PaymentNew})
-    \item เพิ่มใบเสร็จและใบแจ้งยอด (รูปที่~\ref{fig:Slip}, \ref{fig:invoice})
-    \item ใบเสร็จสามารถแนบสลิปจากภายนอกได้ (รูปที่~\ref{fig:UpdatePay})
-    \item การเพิ่มรายการบัญชีสามารถเลือกประเภทของสิ่งของต่างๆได้ (รูปที่~\ref{fig:CreatePay})
+    \item ออกแบบให้ใช้งานได้ง่ายมากยิ่งขึ้น (รูปที่~\ref{fig:Payment})
+    \item เพิ่มใบเสร็จและใบแจ้งยอด (รูปที่~\ref{fig:slipPage}, \ref{fig:invoicePage})
+    \item ใบเสร็จสามารถแนบสลิปจากภายนอกได้ (รูปที่~\ref{fig:updatePayment})
+    \item การเพิ่มรายการบัญชีสามารถเลือกประเภทของสิ่งของต่างๆได้ (รูปที่~\ref{fig:CreatePayment})
 \end{itemize}
-\paragraph{ระบบคลังสิ้นค้า}
+\paragraph{ระบบคลังสินค้า}
 \begin{itemize}
-    \item ออกแบบให้ใช้งานได้ง่ายมากยิ่งขึ้น (รูปที่~\ref{fig:StockNew})
-    \item ราคาของสินค้าสามารถแก้ไขได้ (รูปที่~\ref{fig:editprice})
-    \item สามารถหักจำนวนของสินค้าอัตโนมัติได้ (รูปที่~\ref{fig:handlestock}, \ref{fig:historystock})
+    \item ออกแบบให้ใช้งานได้ง่ายมากยิ่งขึ้น (รูปที่~\ref{fig:Stock})
+    \item ราคาของสินค้าสามารถแก้ไขได้ (รูปที่~\ref{fig:editPrice})
+    \item สามารถหักจำนวนของสินค้าอัตโนมัติได้ (รูปที่~\ref{fig:CheckStock}, \ref{fig:HistoryStock})
 \end{itemize}
 \paragraph{หน้าประวัติ}
 \begin{itemize}
-    \item แก้ไขให้ใช้งานง่ายมากยิ่งขึ้น (รูปที่~\ref{fig:ProfileNew})
+    \item แก้ไขให้ใช้งานง่ายมากยิ่งขึ้น (รูปที่~\ref{fig:Profile})
 \end{itemize}
+
+\section{ผลลัพธ์จากการประเมินหลังจากมีการแก้ไขตาม feedback}
+(รูปที่~\ref{fig:Eval1}, \ref{fig:Eval2}, \ref{fig:Eval3},\ref{fig:Eval4} )
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\linewidth]{images/feedback.png}
+  \end{center}
+  \caption[Poem]{Feedbackจากทางnursery}
+  \label{fig:Feedback}
+\end{figure}
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\linewidth]{images/eval1.png}
+  \end{center}
+  \caption[Poem]{ผลลัพธ์จากการประเมินการใช้งาน หน้าลงทะเบียน}
+  \label{fig:Eval1}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\linewidth]{images/eval2.png}
+  \end{center}
+  \caption[Poem]{ผลลัพธ์จากการประเมินการใช้งาน หน้าประวัติ}
+  \label{fig:Eval2}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\linewidth]{images/eval3.png}
+  \end{center}
+  \caption[Poem]{ผลลัพธ์จากการประเมินการใช้งาน หน้าเช็คข้อมูลรายวัน}
+  \label{fig:Eval3}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\linewidth]{images/eval4.png}
+  \end{center}
+  \caption[Poem]{Comment จากผู้ใช้งาน}
+  \label{fig:Eval4}
+\end{figure}
+
 
 
 
