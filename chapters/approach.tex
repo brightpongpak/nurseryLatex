@@ -60,19 +60,19 @@
 \subsection{XD Design}
 
 \begin{enumerate}
-  \item RegisterPage คือ หน้าแบบฟอร์มในการลงทะเบียนเด็กในการเข้าเรียน nursery (รูปที่~\ref{fig:register})
-  \item  ProfilePage คือ หน้าที่ใช้ในการจัดการกับประวัติส่วนตัวของเด็ก สามารถแสดงข้อมูลและแก้ไขข้อมูลของเด็กแต่ละคนได้ (รูปที่~\ref{fig:Profile}, \ref{fig:ProfileTwo}, \ref{fig:UpdateProfile})
+  \item RegisterPage คือ หน้าแบบฟอร์มในการลงทะเบียนเด็กในการเข้าเรียน nursery (รูปที่~\ref{fig:register}, \ref{fig:docForm})
+  \item  ProfilePage คือ หน้าที่ใช้ในการจัดการกับประวัติส่วนตัวของเด็ก สามารถแสดงข้อมูลและแก้ไขข้อมูลของเด็กแต่ละคนได้ (รูปที่~\ref{fig:Profile}, \ref{fig:ChartPage}, \ref{fig:ProfileTwo}, \ref{fig:UpdateProfile})
   \item  Attendance คือ หน้าเช็คชื่อเด็กรายวัน (รูปที่~\ref{fig:Attendance}, \ref{fig:CheckAttendance})
   \item  Health คือ หน้าเช็คสุขภาพเด็กรายวัน (รูปที่~\ref{fig:Health}, \ref{fig:CheckHealth}) 
   \item  Gadget คือ หน้าเช็คของเด็กรายวัน (รูปที่~\ref{fig:Gadget}, \ref{fig:CheckGadget}) 
-  \item  Stock คือ หน้าจัดการของใช้สำหรับเด็กทั้งหมดใน nursery (รูปที่~\ref{fig:Stock}, \ref{fig:CheckStock}) 
-  \item  Payment คือ หน้าที่ใช้จัดการกับใบเสร็จ ประวัติการจ่ายเงินค่าเล่าเรียน (รูปที่~\ref{fig:Payment}) 
+  \item  Stock คือ หน้าจัดการของใช้สำหรับเด็กทั้งหมดใน nursery (รูปที่~\ref{fig:Stock}, \ref{fig:CheckStock}, \ref{fig:editPrice}, \ref{fig:HistoryStock}) 
+  \item  Payment คือ หน้าที่ใช้จัดการกับใบเสร็จ ประวัติการจ่ายเงินค่าเล่าเรียน (รูปที่~\ref{fig:Payment}, \ref{fig:CreatePayment}, \ref{fig:updatePayment}, \ref{fig:invoicePage}, \ref{fig:slipPage}) 
 \end{enumerate}
 
 \subsection{Architecture}
 
-ระบบหลักๆที่ทางผู้พัฒนาใช้เป็นระบบแบบ Client-Server คือในทางฝั่ง client จะใช้ React ในการพัฒนาแบบ web browser ให้ทางผู้ใช้ส่ง requests มายังฝั่ง server เพื่อที่จะทำงานต้องที่ผู้ใช้ต้องการ ซึ่งฝั่ง server 
-จะพัฒนาโดย Express.js ทางฝั่งนี้ก็จะ query ข้อมูลจากทางฐานข้อมูลที่เก็บไว้บน MongoDB Atlas เมื่อได้รับข้อมูลแล้วจะทำการส่ง responses กลับไปยัง client เพื่อให้ผู้ใช้สามารถทำงานในส่วนที่ต้องการได้
+ระบบหลักๆที่ทางผู้พัฒนาใช้เป็นระบบแบบ Client-Server คือทางฝั่ง client จะใช้ React ในการพัฒนาตัวเว็บไซต์ โดยผู้ใช้จะมีการส่ง request มายังฝั่ง server เพื่อที่จะทำงานที่ผู้ใช้ต้องการ ซึ่งฝั่ง server 
+จะพัฒนาผ่าน Express.js ทางฝั่งนี้ก็จะ query ข้อมูลจากทางฐานข้อมูลที่เก็บไว้บน MongoDB Atlas เมื่อได้รับข้อมูลแล้วจะทำการส่ง response กลับไปยัง client เพื่อให้ผู้ใช้สามารถทำงานในส่วนที่ต้องการได้
 
 \subsection{APIs Docs}
 (รูปที่~\ref{fig:ApiDocs1}, \ref{fig:ApiDocs2})
@@ -99,6 +99,9 @@
 \end{itemize}
 
 \subsection{Testing}
+\begin{itemize}
+  \item ทดสอบระบบในแต่ละฟีเจอร์ว่าสามารถใช้งานได้ตามที่ต้องการหรือไม่
+\end{itemize}
 
 \begin{landscape}
   \begin{figure}
@@ -128,31 +131,23 @@
 
 \begin{figure}
   \begin{center}
-  \includegraphics[width=\linewidth]{images/registerPage.png}
+  \includegraphics[width=\linewidth]{images/RegisterForm.png}
   \end{center}
-  \caption[Poem]{Register Page}
+  \caption[Poem]{Register Form}
   \label{fig:register}
   \end{figure}
 
 \begin{figure}
   \begin{center}
-  \includegraphics[width=\linewidth]{images/AttendancePage.png}
+  \includegraphics[width=\linewidth]{images/DocForm.png}
   \end{center}
-  \caption[Poem]{Attendance Page}
-  \label{fig:Attendance}
+  \caption[Poem]{DocForm}
+  \label{fig:docForm}
   \end{figure}
 
 \begin{figure}
   \begin{center}
-  \includegraphics[width=\linewidth]{images/AttendancePageChecking.png}
-  \end{center}
-  \caption[Poem]{Attendance Checking Page}
-  \label{fig:CheckAttendance}
-  \end{figure}
-
-\begin{figure}
-  \begin{center}
-  \includegraphics[width=\linewidth]{images/ProfileOnePage.png}
+  \includegraphics[width=\linewidth]{images/Profile.png}
   \end{center}
   \caption[Poem]{Profile Page}
   \label{fig:Profile}
@@ -160,23 +155,46 @@
 
 \begin{figure}
   \begin{center}
-  \includegraphics[width=\linewidth]{images/ProfileTwoPage.png}
+  \includegraphics[width=\linewidth]{images/ChartPage.png}
   \end{center}
-  \caption[Poem]{Profile Page}
+  \caption[Poem]{Show Chart Page}
+  \label{fig:ChartPage}
+  \end{figure}
+  
+\begin{figure}
+  \begin{center}
+  \includegraphics[width=\linewidth]{images/ProfileInfo.png}
+  \end{center}
+  \caption[Poem]{ProfileInfo Page}
   \label{fig:ProfileTwo}
   \end{figure}
 
 \begin{figure}
   \begin{center}
-  \includegraphics[width=\linewidth]{images/updateprofilePage.png}
+  \includegraphics[width=\linewidth]{images/updateProfile.png}
   \end{center}
-  \caption[Poem]{Update Profile Page}
+  \caption[Poem]{Update Profile Modal}
   \label{fig:UpdateProfile}
+  \end{figure}
+\begin{figure}
+  \begin{center}
+  \includegraphics[width=\linewidth]{images/Attendance.png}
+  \end{center}
+  \caption[Poem]{Attendance Page}
+  \label{fig:Attendance}
   \end{figure}
 
 \begin{figure}
   \begin{center}
-  \includegraphics[width=\linewidth]{images/HealthPage.png}
+  \includegraphics[width=\linewidth]{images/checkAttendance.png}
+  \end{center}
+  \caption[Poem]{Attendance Checking Modal}
+  \label{fig:CheckAttendance}
+  \end{figure}
+
+\begin{figure}
+  \begin{center}
+  \includegraphics[width=\linewidth]{images/Health.png}
   \end{center}
   \caption[Poem]{Health Page}
   \label{fig:Health}
@@ -184,31 +202,31 @@
 
 \begin{figure}
   \begin{center}
-  \includegraphics[width=\linewidth]{images/HealthPageChecking.png}
+  \includegraphics[width=\linewidth]{images/checkHealth.png}
   \end{center}
-  \caption[Poem]{Health Checking Page}
+  \caption[Poem]{Health Checking Modal}
   \label{fig:CheckHealth}
   \end{figure}
 
 \begin{figure}
   \begin{center}
-  \includegraphics[width=\linewidth]{images/gadgetPage.png}
+  \includegraphics[width=\linewidth]{images/Gadget.png}
   \end{center}
-  \caption[Poem]{gadget Page}
+  \caption[Poem]{Gadget Page}
   \label{fig:Gadget}
   \end{figure}
 
 \begin{figure}
   \begin{center}
-  \includegraphics[width=\linewidth]{images/gadgetPageChecking.png}
+  \includegraphics[width=\linewidth]{images/checkGadget.png}
   \end{center}
-  \caption[Poem]{Gadget Checking Page}
+  \caption[Poem]{Gadget Checking Modal}
   \label{fig:CheckGadget}
   \end{figure}
 
 \begin{figure}
   \begin{center}
-  \includegraphics[width=\linewidth]{images/stockPage.png}
+  \includegraphics[width=\linewidth]{images/Stock.png}
   \end{center}
   \caption[Poem]{Stock Page}
   \label{fig:Stock}
@@ -216,141 +234,58 @@
 
 \begin{figure}
   \begin{center}
-  \includegraphics[width=\linewidth]{images/stockPageChecking.png}
+  \includegraphics[width=\linewidth]{images/handleStock.png}
   \end{center}
-  \caption[Poem]{Stock Checking Page}
+  \caption[Poem]{Handle Stock Page}
   \label{fig:CheckStock}
   \end{figure}
-
 \begin{figure}
   \begin{center}
-  \includegraphics[width=\linewidth]{images/paymentPage.png}
+  \includegraphics[width=\linewidth]{images/editPrice.png}
+  \end{center}
+  \caption[Poem]{Edit Stock Price Page}
+  \label{fig:editPrice}
+  \end{figure}
+\begin{figure}
+  \begin{center}
+  \includegraphics[width=\linewidth]{images/historyStock.png}
+  \end{center}
+  \caption[Poem]{Show History Stock Page}
+  \label{fig:HistoryStock}
+  \end{figure}
+\begin{figure}
+  \begin{center}
+  \includegraphics[width=\linewidth]{images/Payment.png}
   \end{center}
   \caption[Poem]{Payment Page}
   \label{fig:Payment}
 
   \end{figure}
-\begin{enumerate}
-  \item RegisterPage คือ หน้าแบบฟอร์มในการลงทะเบียนเด็กในการเข้าเรียน nursery (รูปที่~\ref{fig:register})
-  \item  ProfilePage คือ หน้าที่ใช้ในการจัดการกับประวัติส่วนตัวของเด็ก สามารถแสดงข้อมูลและแก้ไขข้อมูลของเด็กแต่ละคนได้ (รูปที่~\ref{fig:Profile}, \ref{fig:ProfileTwo}, \ref{fig:UpdateProfile})
-  \item  Attendance คือ หน้าเช็คชื่อเด็กรายวัน (รูปที่~\ref{fig:Attendance}, \ref{fig:CheckAttendance})
-  \item  Health คือ หน้าเช็คสุขภาพเด็กรายวัน (รูปที่~\ref{fig:Health}, \ref{fig:CheckHealth}) 
-  \item  Gadget คือ หน้าเช็คของเด็กรายวัน (รูปที่~\ref{fig:Gadget}, \ref{fig:CheckGadget}) 
-  \item  Stock คือ หน้าจัดการของใช้สำหรับเด็กทั้งหมดใน nursery (รูปที่~\ref{fig:Stock}, \ref{fig:CheckStock}) 
-  \item  Payment คือ หน้าที่ใช้จัดการกับใบเสร็จ ประวัติการจ่ายเงินค่าเล่าเรียน (รูปที่~\ref{fig:Payment}) 
-\end{enumerate}
-
-
-
-
-
-
-
-
-\subsection{Architecture}
-
-ระบบหลักๆที่ทางผู้พัฒนาใช้เป็นระบบแบบ Client-Server คือในทางฝั่ง client จะใช้ React ในการพัฒนาแบบ web browser ให้ทางผู้ใช้ส่ง requests มายังฝั่ง server เพื่อที่จะทำงานต้องที่ผู้ใช้ต้องการ ซึ่งฝั่ง server 
-จะพัฒนาโดย Express.js ทางฝั่งนี้ก็จะ query ข้อมูลจากทางฐานข้อมูลที่เก็บไว้บน MongoDB Atlas เมื่อได้รับข้อมูลแล้วจะทำการส่ง responses กลับไปยัง client เพื่อให้ผู้ใช้สามารถทำงานในส่วนที่ต้องการได้
-\subsection{APIs Docs}
-\begin{flushleft}
-  \begin{tabular}{|c|c|c|c|c|}
-  \hline
-  URL & Describe \\
-  \hline
-  
-   & รับค่า room มาแล้วส่งข้อมูลเด็กในห้องนั้นไปให้ client
-  \\
-  
-  {/api/room/enrollRoom/}& Data Transfer
-  
-  \\ &Client: \{room:String ,startDate:Date ,childId:ObjectId\}
-  \\ &Server: Not response
-  \\ 
-  \hline
-
-  \hline
-  
-   & รับค่า id เด็กและวันที่ออกจากห้องมา แล้วส่งไปยังหลังบ้านให้ทำ
-   
-  \\ & การแก้ไขข้อมูลให้เด็กคนนี้ออกจากห้องเรียนนี้ในวันที่ส่งมา 
-  \\ & เมื่อทำการแก้ไขเสร็จสิ้น จะทำการส่ง
-  \\ {/api/room/quitRoom}&    สถานะ success กลับไปยัง client\\
-  & Data Transfer
-  
-  \\ &Client: \{endDate:Date ,childId:ObjectId\}
-  \\ &Server: \{success:Boolean\}
-  \\ 
-  \hline
-
-  \hline
-  
-   & รับค่า วันที่เช็คชื่อมา , ห้อง แล้วจะส่งเด็ก
-   
-  \\
-  & ที่ไม่มาในห้องที่เลือกไปให้ client
-  \\
-  
-  {/api/attendance/show/childAbsent}& Data Transfer
-  
-  \\ &   Client: \{date:Date , room:String\}
-
-  \\ &   Server: \{childAbsent:[ childs ]\}
-
-  \\ 
-  \hline
-
-  \hline
-   & รับค่า child\_id วันที่เลือก สถานะว่ามาหรือไม่มา
-  \\
-  & ทำการ update ค่า attend ที่ child\_idและวันที่เลือกตรงกับค่าที่ส่งมา
-  \\  
-  {/api/attendance/update/checklist}& Data Transfer
-  \\ &   Client: \{id:ObjectId, date:Date, attend:Boolean\}
-  \\ &   Server: \{status:String\}
-  \\ 
-  \hline
-
-  \hline
-   & รับค่า child\_id วันที่เช็ค สถานะว่ามาหรือไม่มา
-   
-  \\
-  & ทำการสร้างเป็นประวัติการเช็คชื่อของ child\_id
-  \\ 
-  & ในวันที่เลือก สถานะที่ส่งมา เก็บไว้ใน collection attendances
-  
-  \\
-  {/api/attendance/checklist}& Data Transfer
-  \\ &   Client: \{id:ObjectId, date:Date , attend:Boolean\}
-  \\ &   Server: \{checkbutton: Boolean\}
-  \\ 
-  \hline
-
-  \end{tabular}
-\end{flushleft}
-\section{ขั้นตอนการดำเนินงาน}
-\subsection{Discovery}
-\begin{itemize}
-  \item สำรวจและสอบถามปัญหาจาก stakeholder
-  \item นำปัญหาต่างหรือ requirements มาวิเคราะห์
-  \item สรุปผลแล้วนำ requirements ที่ได้จากการวิเคราะห์ไปทำต่อในขั้นตอนถัดไป
-\end{itemize}
-
-\subsection{Design}
-\begin{itemize}
-  \item ออกแบบหน้า UI/UX โดย Adobe XD
-  \item ออกแบบฐานข้อมูลโดย Draw.io
-\end{itemize}
-
-\subsection{Develop}
-\begin{itemize}
-  \item สร้าง Database
-  \item เขียน Backend ตามที่ได้ design มาในขั้นตอนก่อนหน้า
-  \item เขียน Frontend แล้วทดสอบยิง API ไปยังฝั่ง Backend
-  \item เชื่อมโค้ด Frontend กับ Backend ผ่าน API
-\end{itemize}
-
-\subsection{Testing}
-\begin{itemize}
-  \item ทดสอบระบบในแต่ละฟีเจอร์ว่าสามารถใช้งานได้ตามที่ต้องการ
-\end{itemize}
-
+\begin{figure}
+  \begin{center}
+  \includegraphics[width=\linewidth]{images/CreatePayment.png}
+  \end{center}
+  \caption[Poem]{CreatePayment}
+  \label{fig:CreatePayment}
+  \end{figure}
+\begin{figure}
+  \begin{center}
+  \includegraphics[width=\linewidth]{images/UpdatePayment.png}
+  \end{center}
+  \caption[Poem]{Handle Payment}
+  \label{fig:updatePayment}
+  \end{figure}
+\begin{figure}
+  \begin{center}
+  \includegraphics[width=\linewidth]{images/invoicePage.png}
+  \end{center}
+  \caption[Poem]{Page for printing invoice}
+  \label{fig:invoicePage}
+  \end{figure}
+\begin{figure}
+  \begin{center}
+  \includegraphics[width=\linewidth]{images/slipPage.png}
+  \end{center}
+  \caption[Poem]{Page for printing slip}
+  \label{fig:slipPage}
+  \end{figure}
