@@ -3,10 +3,9 @@
 \else%
 \ifcpe การประเมินระบบ\else System Evaluation\fi
 \fi}
-
-\section{Feedback จากทาง Nursery}
-(รูปที่~\ref{fig:Feedback})
-สรุปเป็นหัวข้อหลักๆได้ดังต่อนี้
+บทนี้จะพูดถึงผลลัพธ์หลังจากที่ให้ทาง Nursery ได้ลองใช้ Web Application ของเราและการแก้ไขตาม Feedback ที่ได้รับ 
+\section{Feedback จากทาง Nursery หลังจากที่ได้ลอลองใช้ Web Application ของเราครั้งแรก}
+จากการที่ให้ User ได้ลองใช้งานก็พบว่าได้รับ Feedback สรุปเป็นหัวข้อหลักๆ ได้ดังต่อนี้
 \paragraph{ระบบบัญชี}
 \begin{itemize}
     \item ยังไม่มีใบแจ้งยอดและใบเสร็จ
@@ -19,35 +18,66 @@
     \item ไม่สามารถหักจำนวนของสินค้าอัตโนมัติได้
 \end{itemize}
 
-\section{แก้ไขตาม Feedback}
+\paragraph{ส่วน Feature อื่นๆ นั้นสามารถใช้งานได้ตามความต้องการของทาง Nursery}
+
+\section{แก้ไขตาม Feedback ที่ได้รับหลังจากทาง Nursery ได้ทดลองใช้งาน}
+ใช้เวลาในการแก้ไขทั้งหมด 3 สัปดาห์ แล้วนำไปให้ทาง Nursery ทดลองใช้อีกครั้ง
 \paragraph{ระบบบัญชี}
 \begin{itemize}
-    \item ออกแบบให้ใช้งานได้ง่ายมากยิ่งขึ้น (รูปที่~\ref{fig:Payment})
+    \item เนื่องจากแบบเก่านั้น (รูปที่~\ref{fig:old1})   ไม่ได้แบ่งสีและเพิ่มสัญลักษณ์ทำให้ผู้ใช้ยังสับสนอยู่ว่าถ้าต้องการทำแบบนี้จะต้องไปกดตรง
+    ไหนเราจึงแก้ให้สามารถเข้าใจได้ง่ายมากยิ่งขึ้น (รูปที่~\ref{fig:Payment})
     \item เพิ่มใบเสร็จและใบแจ้งยอด (รูปที่~\ref{fig:slipPage}, \ref{fig:invoicePage})
     \item ใบเสร็จสามารถแนบสลิปจากภายนอกได้ (รูปที่~\ref{fig:updatePayment})
     \item การเพิ่มรายการบัญชีสามารถเลือกประเภทของสิ่งของต่างๆได้ (รูปที่~\ref{fig:CreatePayment})
 \end{itemize}
 \paragraph{ระบบคลังสินค้า}
 \begin{itemize}
-    \item ออกแบบให้ใช้งานได้ง่ายมากยิ่งขึ้น (รูปที่~\ref{fig:Stock})
+    \item เนื่องจากแบบเก่านั้น (รูปที่~\ref{fig:old2}) ยังไม่สามารถดู Size ของสินค้าได้ทำให้ผู้ใช้ไม่ทราบว่าสินค้า Size นั้นๆ เหลือเท่าไหร่ กั้งนั้นเราจึงแก้ไขให้สามารถดูจำนวนและ Size ของสินค้านั้นๆได้ (รูปที่~\ref{fig:Stock})
     \item ราคาของสินค้าสามารถแก้ไขได้ (รูปที่~\ref{fig:editPrice})
     \item สามารถหักจำนวนของสินค้าอัตโนมัติได้ (รูปที่~\ref{fig:CheckStock}, \ref{fig:HistoryStock})
 \end{itemize}
 \paragraph{หน้าประวัติ}
 \begin{itemize}
-    \item แก้ไขให้ใช้งานง่ายมากยิ่งขึ้น (รูปที่~\ref{fig:Profile})
+    \item เนื่องจากแบบเก่านั้น (รูปที่~\ref{fig:old3}) ยังไม่มีสัญลักษณ์ สี และคำสั่งบ้างอย่างทำให้ผู้ใช้ยังติดขัดกับการทำงานอยู่เราเลยแก้ไขให้ตรงตามความต้องการมากขึ้น (รูปที่~\ref{fig:Profile})
 \end{itemize}
 
-\section{ผลลัพธ์จากการประเมินหลังจากมีการแก้ไขตาม feedback}
-(รูปที่~\ref{fig:Eval1}, \ref{fig:Eval2}, \ref{fig:Eval3}, \ref{fig:Eval4}, \ref{fig:Eval5}, \ref{fig:Eval6}, \ref{fig:Eval7}, \ref{fig:Eval8})
+\section{ผลลัพธ์จากการประเมินหลังจากมีการแก้ไขตาม Feedback}
+ลำกับคะแนนจาก 1-5 นั้นคือจากสารมถใช้งานยากที่สุดไปยังสามารถใช้งานง่ายที่สุด
+\paragraph{ระบบลงทะเบียน}
+\begin{itemize}
+  \item จากการประเมินพบว่าสามารถใช้งานได้ง่ายและไม่พบปัญหาหลังจากทดลองใช้ (รูปที่~\ref{fig:Eval1})
+\end{itemize}
+\paragraph{หน้าประวัติ}
+\begin{itemize}
+  \item จากการประเมินพบว่าสามารถใช้งานได้ง่ายและไม่พบปัญหาหลังจากทดลองใช้ (รูปที่~\ref{fig:Eval2})
+\end{itemize}
+\paragraph{ระบบเช็คชื่อรายวัน}
+\begin{itemize}
+  \item จากการประเมินพบว่าสามารถใช้งานได้ง่ายและไม่พบปัญหาหลังจากทดลองใช้ (รูปที่~\ref{fig:Eval3})
+\end{itemize}
+\paragraph{ระบบเช็คสุขภาพรายวัน}
+\begin{itemize}
+  \item จากการประเมินพบว่าสามารถใช้งานได้ง่ายและไม่พบปัญหาหลังจากทดลองใช้ (รูปที่~\ref{fig:Eval5})
+\end{itemize}
+\paragraph{ระบบเช็คอุปกรณ์รายวัน}
+\begin{itemize}
+  \item จากการประเมินพบว่าสามารถใช้งานได้ง่ายและไม่พบปัญหาหลังจากทดลองใช้ (รูปที่~\ref{fig:Eval6})
+\end{itemize}
+\paragraph{ระบบบัญชี}
+\begin{itemize}
+  \item จากการประเมินพบว่าสามารถใช้งานได้ง่ายและไม่พบปัญหาหลังจากทดลองใช้ (รูปที่~\ref{fig:Eval7})
+\end{itemize}
+\paragraph{ระบบคลังสินค้า}
+\begin{itemize}
+  \item จากการประเมินพบว่าสามารถใช้งานได้ง่ายและไม่พบปัญหาหลังจากทดลองใช้ (รูปที่~\ref{fig:Eval8})
+\end{itemize}
+\paragraph{สรุปผลการประเมินของระบบต่างๆ}
+\begin{itemize}
+  \item ทุก Feature ที่เราแก้ไขนั้นสามารถใช้งานได้ง่ายและสะดวกต่อทาง Nursery มากยิ่งขึ้นและไม่พบปัญหาจากการใช้งานในแต่ละ Feature (รูปที่~\ref{fig:Eval4})
+\end{itemize}
 
-\begin{figure}
-  \begin{center}
-    \includegraphics[width=\linewidth]{images/feedback.png}
-  \end{center}
-  \caption[หน้าfeedbackจากทางnursery]{Feedbackจากทางnursery}
-  \label{fig:Feedback}
-\end{figure}
+
+
 \begin{figure}
   \begin{center}
     \includegraphics[width=\linewidth]{images/eval1.png}
@@ -68,7 +98,7 @@
   \begin{center}
     \includegraphics[width=\linewidth]{images/eval3.png}
   \end{center}
-  \caption[ผลลัพธ์จากการประเมินการใช้งาน หน้าประวัติ]{ผลลัพธ์จากการประเมินการใช้งาน หน้าเช็คข้อมูลรายวัน}
+  \caption[ผลลัพธ์จากการประเมินการใช้งาน หน้าเช็คชื่อรายวัน]{ผลลัพธ์จากการประเมินการใช้งาน หน้าเช็คชื่อรายวัน}
   \label{fig:Eval3}
 \end{figure}
 
@@ -108,10 +138,33 @@
   \begin{center}
     \includegraphics[width=\linewidth]{images/eval4.png}
   \end{center}
-  \caption[Comment จากผู้ใช้งาน]{Comment จากผู้ใช้งาน}
+  \caption[Comments จากผู้ใช้งาน]{Comments จากผู้ใช้งาน}
   \label{fig:Eval4}
 \end{figure}
 
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\linewidth]{images/paymentPage.png}
+  \end{center}
+  \caption[หน้าระบบบัญชี]{หน้าระบบบัญชี}
+  \label{fig:old1}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\linewidth]{images/stockPage.png}
+  \end{center}
+  \caption[หน้าระบบคลังสินค้า]{หน้าระบบคลังสินค้า}
+  \label{fig:old2}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\linewidth]{images/ProfileOnePage.png}
+  \end{center}
+  \caption[หน้าประวัติ]{หน้าประวัติ}
+  \label{fig:old3}
+\end{figure}
 
 
 

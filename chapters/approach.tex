@@ -7,20 +7,6 @@
 
 
 
-\makeatletter
-
-% \renewcommand\section{\@startsection {section}{1}{\z@}%
-%                                    {13.5ex \@plus -1ex \@minus -.2ex}%
-%                                    {2.3ex \@plus.2ex}%
-%                                    {\normalfont\large\bfseries}}
-
-\makeatother
-%\vspace{2ex}
-% \titleformat{\section}{\normalfont\bfseries}{\thesection}{1em}{}
-% \titlespacing*{\section}{0pt}{10ex}{0pt}
-
-
-
 \section{โครงสร้างของระบบ}
 
 
@@ -28,15 +14,15 @@
 \subsection{Database Design}
 
 ประเภทของฐานข้อมูลที่ใช้เป็นแบบ NoSQL
-(รูปที่~\ref{fig:DatabaseDiagram}) แสดงองค์ประกอบต่างๆของฐานข้อมูล ซึ่งมีรายละเอียดดังต่อไปนี้
+(รูปที่~\ref{fig:DatabaseDiagram}) แสดงองค์ประกอบต่างๆ ของฐานข้อมูล ซึ่งมีรายละเอียดดังต่อไปนี้
 %
   \begin{itemize}
     \item childs เก็บข้อมูลที่เกี่ยวข้องกับเด็กทั้งหมด เช่น เก็บวันที่สมัคร วันที่เข้าเรียน ชื่อ ชื่อเล่น วันเดือนปีเกิด เป็นต้น  
     โดยที่ \_id จะมีการเชื่อมกับ payment, gadgets, healths, enrollment, address, guardians, customer, childStatic, childDynamic, medical, document, child\_info 
-    ในส่วนของการเชื่อมความสัมพันธ์นี้ ทำเพื่อให้เวลาจะมีการเรียกใช้ข้อมูลของเด็กใน ส่วนของข้อมูลอื่น เช่น การเช็คชื่อ การชำระเงินค่าเรียน การเช็คของ การทำเช่นนี้จะช่วยให้เรียกข้อมูลเด็กมาใช้ได้ง่ายยิ่งขึ้น
-    \item childStatic เก็บข้อมูลเด็กที่ไม่เปลี่ยนแปลง เชื้อชาติ ศาสนา วันที่สมัคร
-    \item childDynamic เก็บข้อมูลเด็กที่มีการเปลี่ยนแปลง น้ำหนัก ส่วนสูง รูปถ่าย
-    \item child\_info เก็บข้อมูลพฤติกรรมต่างๆของเด็ก
+    ในส่วนของการเชื่อมความสัมพันธ์นี้ ทำเพื่อให้การเรียกใช้ข้อมูลของเด็กในส่วนของข้อมูลอื่น เช่น การเช็คชื่อ การชำระเงินค่าเรียน การเช็คของ เกิดขึ้นได้โดยสะดวกยิ่งขึ้น
+    \item childStatic เก็บข้อมูลเด็กที่ไม่เปลี่ยนแปลง เช่น เชื้อชาติ ศาสนา วันที่สมัคร
+    \item childDynamic เก็บข้อมูลเด็กที่มีการเปลี่ยนแปลง เช่น น้ำหนัก ส่วนสูง รูปถ่าย
+    \item child\_info เก็บข้อมูลพฤติกรรมต่างๆ ของเด็ก
     \item info\_category เก็บข้อมูลชื่อประเภทหัวเรื่องต่างๆ
     \item info\_item เก็บข้อมูลหยิบย่อยต่างๆ
     \item info\_display\_order เก็บข้อมูลสำหรับทำหน้าแสดงผลแบบ dynamic
@@ -51,9 +37,9 @@
     \item attendances เก็บข้อมูลการเช็คชื่อทั้งหมด วันที่เช็ค สถานะว่ามาหรือไม่มา
     \item gadgets เก็บข้อมูลการเช็คอุปกรณ์ของเด็กทั้งหมด มีการเก็บ ข้อมูลเด็ก วัน ลิสต์ของที่ต้องเช็ค ก็จะมีสถานะว่าเอามาหรือไม่เอามา
     \item healths เก็บข้อมูลการเช็คสุขภาพของเด็กทั้งหมด มีการเก็บ ข้อมูลเด็ก วัน ลิสต์สุขภาพที่ต้องเช็ค ก็จะมีสถานะว่าใช่หรือไม่ใช่
-    \item stock เก็บข้อมูลของใช้ทั้งหมดของเด็กใน nursery ว่าของชิ้นนี้ชื่ออะไร ไซต์อะไร รหัสสินค้าคืออะไร
-    \item show\_stock เก็บข้อมูลว่าของต่างๆมีจำนวนเท่าไหร่ ราคาเท่าไหร่
-    \item history\_stock เก็บข้อมูลการเพิ่มลดของต่างๆ จำนวน แก้ไขวันไหน โดยใคร
+    \item stock เก็บข้อมูลของใช้ทั้งหมดของเด็กใน nursery ว่าของชิ้นนี้ชื่ออะไร \CI{ไซต์}{check spelling}อะไร รหัสสินค้าคืออะไร
+    \item show\_stock เก็บข้อมูลว่าของต่างๆ มีจำนวน\CI{เท่าไหร่}{ภาษาพูด} ราคาเท่าไหร่
+    \item history\_stock เก็บข้อมูลการเพิ่มลดของต่างๆ \CI{จำนวน}{จำนวนอะไร} แก้ไขวันไหน โดยใคร
     \item payment เก็บข้อมูลประวัติการโอนเงินค่าเล่าเรียนของผู้ปกครองเด็ก มีการเก็บ ข้อมูลเด็ก วันที่ส่งสลิปโอนเงิน ค่าเล่าเรียนหรือจำนวนเงินที่ชำระ รูปสลิปใบเสร็จ 
   \end{itemize}
 
@@ -68,14 +54,17 @@
   \item  Stock คือ หน้าจัดการของใช้สำหรับเด็กทั้งหมดใน nursery (รูปที่~\ref{fig:Stock}, \ref{fig:CheckStock}, \ref{fig:editPrice}, \ref{fig:HistoryStock}) 
   \item  Payment คือ หน้าที่ใช้จัดการกับใบเสร็จ ประวัติการจ่ายเงินค่าเล่าเรียน (รูปที่~\ref{fig:Payment}, \ref{fig:CreatePayment}, \ref{fig:updatePayment}, \ref{fig:invoicePage}, \ref{fig:slipPage}) 
 \end{enumerate}
+\CIreply{อธิบาย feature ของแต่ละหน้าว่าทำอะไรได้บ้าง ผู้ใช้ต้องทำอะไร และระบบจะบริการอะไรให้  แต่ละรูปควรจะเขียนเป็น bullet point ได้ ทำให้หัวข้อนี้โดยรวมน่าจะยาวประมาณ 3 หน้า ไม่รวมรูป  หากคำอธิบายเริ่มยาว ให้ค่อยๆ ย้ายรูปมาแทรกในส่วนของ text ให้เหมาะสม}
 
 \subsection{Architecture}
 
-ระบบหลักๆที่ทางผู้พัฒนาใช้เป็นระบบแบบ Client-Server คือทางฝั่ง client จะใช้ React ในการพัฒนาตัวเว็บไซต์ โดยผู้ใช้จะมีการส่ง request มายังฝั่ง server เพื่อที่จะทำงานที่ผู้ใช้ต้องการ ซึ่งฝั่ง server 
+ระบบหลักๆที่ทางผู้พัฒนาใช้เป็นระบบแบบ client--server คือทางฝั่ง client จะใช้ React ในการพัฒนาตัวเว็บไซต์ โดยผู้ใช้จะมีการส่ง request มายังฝั่ง server เพื่อที่จะทำงานที่ผู้ใช้ต้องการ ซึ่งฝั่ง server 
 จะพัฒนาผ่าน Express.js ทางฝั่งนี้ก็จะ query ข้อมูลจากทางฐานข้อมูลที่เก็บไว้บน MongoDB Atlas เมื่อได้รับข้อมูลแล้วจะทำการส่ง response กลับไปยัง client เพื่อให้ผู้ใช้สามารถทำงานในส่วนที่ต้องการได้
 
 \subsection{APIs Docs}
+\CIreply{อธิบายโดยคร่าวๆ ด้วย}
 (รูปที่~\ref{fig:ApiDocs1}, \ref{fig:ApiDocs2})
+\CIreply{หมายเลขรูปไม่เรียง ให้ย้าย figure ตามลำดับที่ควรจะเป็น หรือย้าย section text ตรงนี้}
 \section{ขั้นตอนการดำเนินงาน}
 \subsection{Discovery}
 \begin{itemize}
@@ -92,10 +81,10 @@
 
 \subsection{Develop}
 \begin{itemize}
-  \item สร้าง Database
+  \item สร้าง database
   \item เขียน APIs ตามที่ได้ design มาในขั้นตอนก่อนหน้า
-  \item เขียน Frontend แล้วทดสอบยิง APIs ไปยังฝั่ง Backend
-  \item เชื่อมโค้ด Frontend กับ Backend ผ่าน APIs
+  \item เขียน frontend แล้วทดสอบยิง APIs ไปยังฝั่ง Backend
+  \item เชื่อมโค้ด frontend กับ backend ผ่าน APIs
 \end{itemize}
 
 \subsection{Testing}
@@ -120,6 +109,9 @@
   \caption[ตารางแสดง API Document 1]{ApiDocs1}
   \label{fig:ApiDocs1}
 \end{figure}
+\CIreply{check \texttt{caption} syntax: วงเล็บเหลี่ยมสำหรับจข้อความในส่วนสารบัญ วงเล็บปีกกาสำหรับข้อความใต้รูปภาพ; ถ้าไม่ใช้วงเล็บเหลี่ยม default จะเป็นอันเดียวกับที่อยู่ในปีกกา}
+
+\CIreply{เล็กเกิน มองไม่เห็น ใช้ landscape?}
 
 \begin{figure}
   \begin{center}
@@ -128,7 +120,9 @@
   \caption[ตารางแสดง API Document 2]{ApiDocs2}
   \label{fig:ApiDocs2}
 \end{figure}
+\CIreply{เล็กเกิน มองไม่เห็น ใช้ landscape?}
 
+\CIreply{screenshots ควรทำเป็น landscape เพื่อทำให้มองเห็น}
 \begin{figure}
   \begin{center}
   \includegraphics[width=\linewidth]{images/RegisterForm.png}
@@ -268,6 +262,8 @@
   \caption[หน้าเพิ่มรายการบัญชี]{CreatePayment}
   \label{fig:CreatePayment}
   \end{figure}
+\CIreply{ใหญ่เกิน}
+
 \begin{figure}
   \begin{center}
   \includegraphics[width=\linewidth]{images/UpdatePayment.png}
