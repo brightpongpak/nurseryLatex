@@ -5,8 +5,6 @@
 \fi
 }
 
-
-
 \section{โครงสร้างของระบบ}
 
 
@@ -55,120 +53,17 @@
   
   สุดท้ายผู้ใช้จะต้องกรอกข้อมูลที่อยู่ของเด็ก(รูปที่~\ref{fig:addressForm}) เมื่อกรอกข้อมูลทั้งหมดเสร็จสิ้นให้กดปุ่มยืนยันเพื่อบันทึกผล
   
-    \begin{figure}
-      \begin{center}
-      \includegraphics[width=\linewidth]{images/RegisterForm.png}
-      \end{center}
-      \caption[หน้ากรอกข้อมูลเด็ก]{หน้ากรอกข้อมูลเด็ก}
-      \label{fig:register}
-    \end{figure}
-  
-  
-    \begin{figure}
-      \begin{center}
-      \includegraphics[width=\linewidth]{images/fatherForm.png}
-      \end{center}
-      \caption[หน้ากรอกข้อมูลบิดา]{หน้ากรอกข้อมูลบิดา}
-      \label{fig:fatherForm}
-    \end{figure}
-  
-  
-    \begin{figure}
-      \begin{center}
-      \includegraphics[width=\linewidth]{images/motherForm.png}
-      \end{center}
-      \caption[หน้ากรอกข้อมูลมารดา]{หน้ากรอกข้อมูลมารดา}
-      \label{fig:motherForm}
-    \end{figure}
-  
-  
-    \begin{figure}
-      \begin{center}
-      \includegraphics[width=\linewidth]{images/guardiansForm.png}
-      \end{center}
-      \caption[หน้ากรอกข้อมูลผู้ปกครอง]{หน้ากรอกข้อมูลผู้ปกครอง}
-      \label{fig:guardiansForm}
-    \end{figure}
-  
-  
-    \begin{figure}
-      \begin{center}
-      \includegraphics[width=\linewidth]{images/addressForm.png}
-      \end{center}
-      \caption[หน้ากรอกข้อมูลที่อยู่]{หน้ากรอกข้อมูลที่อยู่}
-      \label{fig:addressForm}
-    \end{figure}
-  
-  
   \item  ProfilePage คือ หน้าที่ใช้ในการจัดการกับประวัติส่วนตัวของเด็ก(รูป~\ref{fig:Profile}) ซึ่งจะมีฟังก์ชั่นการทำงานเสริมที่ใช้ดูประวัติส่วนตัวกับข้อมูลรายเดือนของเด็ก
   โดยกดปุ่มสีฟ้าใต้ชื่อเพื่อดูข้อมูลส่วนตัว(รูป~\ref{fig:ProfileTwo}) ซึ่งหน้านี้จะแสดงข้อมูลส่วนตัวและสามารถแก้ไขข้อมูลของเด็กแต่ละคนได้โดยกดปุ่มแก้ข้อมูล เมื่อกดแล้วระบบจะนำผู้ใช้ไปยังหน้า (รูป~\ref{fig:UpdateProfile}) 
   ในส่วนของหน้านี้จะสามารถแก้ไขน้ำหนัก ส่วนสูง ชื่อเล่น ห้องเรียน ชื่อและเบอร์โทรผู้ปกครอง(พ่อ,แม่,ญาติ) โรงพยาบาลที่จะให้พาน้องไปยามฉุกเฉิน รูปภาพน้อง 
   โดยที่สามารถแก้ไขบางส่วนได้ ไม่จำเป็นต้องแก้ไขข้อมูลทั้งหมดทุกครั้ง 
   ส่วนการใช้งานฟังก์ชั่นการแสดงข้อมูลรายเดือนของเด็กให้กลับมาที่หน้าประวัติ จากนั้นกดปุ่มสีชมพูล่างชื่อเด็ก
   จากนั้นระบบจะนำผู้ใช้มายังหน้าแสดงข้อมูลรายเดือน(รูป~\ref{fig:ChartPage})ของเด็กคนที่กดเลือก โดยที่การใช้งานหน้านี้จะมีให้เลือกเดือนที่จะดูข้อมูล เพียงเท่านี้
-
-  
-    \begin{figure}
-      \begin{center}
-      \includegraphics[width=\linewidth]{images/Profile.png}
-      \end{center}
-      \caption[หน้าประวัติเด็ก]{หน้าประวัติเด็ก}
-      \label{fig:Profile}
-    \end{figure}
-  
-  
-  
-    \begin{figure}
-      \begin{center}
-      \includegraphics[width=\linewidth]{images/ProfileInfo.png}
-      \end{center}
-      \caption[หน้าประวัติส่วนตัวเด็ก]{หน้าประวัติส่วนตัวเด็ก}
-      \label{fig:ProfileTwo}
-    \end{figure}
-  
-  
-    \begin{figure}
-      \begin{center}
-      \includegraphics[width=\linewidth]{images/updateProfile.png}
-      \end{center}
-      \caption[หน้าแก้ไขข้อมูลเด็ก]{หน้าแก้ไขข้อมูลเด็ก}
-      \label{fig:UpdateProfile}
-      \end{figure}
-  
-
-  
-    \begin{figure}
-      \begin{center}
-      \includegraphics[width=\linewidth]{images/ChartPage.png}
-      \end{center}
-      \caption[หน้าแสดงข้อมูลรายเดือนเด็ก]{หน้าแสดงข้อมูลรายเดือนเด็ก}
-      \label{fig:ChartPage}
-    \end{figure}
   
   \item  Attendance คือ หน้าเช็คชื่อเด็กรายวัน ซึ่งหน้าแสดงผลหลักจะเป็นหน้านี้(รูปที่~\ref{fig:Attendance}) ซึ่งหน้าเช็คชื่อจะแสดงผลการเข้าเรียนของเด็กในเดือนและห้องทีผู้ใช้ได้เลือกไว้(ค่าเริ่มต้นจะเป็นเดือนปัจจุบันกับห้อง ก1) 
   โดยสามารถเลือกได้จากinputตรงมุมซ้ายบนล่าง menu bar ส่วนในการเช็คชื่อนั้น สามารถทำได้โดยกดปุ่มเช็คชื่อ
   จากนนั้นระบบจะนำผู้ใช้ไปยังหน้าเช็คชื่อ(รูป\ref{fig:CheckAttendance}) หน้านี้เป็นหน้าสำหรับให้ผู้ใช้เข้ามาเช็คข้อมูลเด็กในแต่ละวัน โดยมีวันที่ต้องการเช็คให้เลือกที่มุมขวาบน(ค่าเริ่มต้นจะเป็นวันปัจจุบัน)การเช็คชื่อทำได้ด้วยการกดที่ปุ่มด้านล่างสถานะกดหนึ่งครั้ง
   หน้าจะแสดงผลว่ามา กดอีกครั้งจะแสดงผลว่าไม่มา ถ้ากดอีกจะแสดงผลเป็นมา ไม่มา สลับกัน
-
-  
-    \begin{figure}
-      \begin{center}
-      \includegraphics[width=\linewidth]{images/Attendance.png}
-      \end{center}
-      \caption[หน้าแสดงการเข้าเรียนเด็ก]{หน้าแสดงการเข้าเรียนเด็ก}
-      \label{fig:Attendance}
-    \end{figure}
-  
-  
-  
-    \begin{figure}
-      \begin{center}
-      \includegraphics[width=\linewidth]{images/checkAttendance.png}
-      \end{center}
-      \caption[หน้าเช็คชื่อเด็ก]{หน้าเช็คชื่อเด็ก}
-      \label{fig:CheckAttendance}
-    \end{figure}
-  
 
   \item  Health คือ หน้าเช็คสุขภาพเด็กรายวัน หน้านี้(รูป~\ref{fig:Health}) จะแสดงข้อมูลสุขภาพของเด็กรายวัน(ค่าเริ่มต้นจะเป็นวันปัจจุบันกับห้องเรียน ก1) โดยผู้ใช้สามารถเลือกวันและห้องเรียนที่ต้องการจะแสดงข้อมูลได้จากinputมุมซ้ายบนล่างmenu bar 
   หากผู้ใช้ต้องการเช็คข้อมูลให้กดปุ่มเช็คสุขภาพประจำวัน จากนั้นระบบจะนำผู้ใช้ไปยังหน้าเช็คสุขภาพประจำวัน (รูป~\ref{fig:CheckHealth}) 
@@ -176,41 +71,11 @@
   หน้าจะแสดงผลว่าปกติ กดอีกครั้งจะแสดงผลว่าไม่ปกติ ถ้ากดอีกจะแสดงผลเป็นปกติ ไม่ปกติ สลับกัน
 
 
-    \begin{figure}
-      \begin{center}
-      \includegraphics[width=\linewidth]{images/Health.png}
-      \end{center}
-      \caption[หน้าแสดงข้อมูลสุขภาพเด็กรายวัน]{หน้าแสดงข้อมูลสุขภาพเด็กรายวัน}
-      \label{fig:Health}
-      \end{figure}
-
-    \begin{figure}
-      \begin{center}
-      \includegraphics[width=\linewidth]{images/checkHealth.png}
-      \end{center}
-      \caption[หน้าเช็คสุขภาพเด็ก]{หน้าเช็คสุขภาพเด็ก}
-      \label{fig:CheckHealth}
-      \end{figure}
-
   \item  Gadget คือ หน้าเช็คอุปกรณ์เด็กรายวัน หน้านี้(รูปที่~\ref{fig:Gadget}) จะแสดงข้อมูลของที่เด็กเอามารายวัน(ค่าเริ่มต้นจะเป็นวันปัจจุบันกับห้องเรียน ก1) โดยผู้ใช้สามารถเลือกวันและห้องเรียนที่ต้องการจะแสดงข้อมูลได้จากinputมุมซ้ายบนล่างmenu bar 
   หากผู้ใช้ต้องการเช็คข้อมูลให้กดปุ่มเช็คอุปกรณ์ประจำวัน จากนั้นระบบจะนำผู้ใช้ไปยังหน้าเช็คอุปกรณ์ประจำวัน (รูป~\ref{fig:CheckGadget}) 
   หน้านี้เป็นหน้าสำหรับให้ผู้ใช้เข้ามาเช็คข้อมูลเด็กในแต่ละวัน โดยที่การเช็คอุปกรณ์จะทำได้ด้วยการกดที่ปุ่มด้านล่างข้อมูลที่ต้องการเช็ค(นม, แพมเพิส, ขวดน้ำ, ขวดนม, ผ้าขนหนู) กดหนึ่งครั้ง
   หน้าจะแสดงผลว่าเอามา(สัญลักษณ์เช็คถูก) กดอีกครั้งจะแสดงผลว่าไม่ได้เอามา(สัญลักษณ์เช็คผิด) ถ้ากดอีกจะแสดงผลเอามา ไม่เอามา สลับกัน
-  \begin{figure}
-    \begin{center}
-    \includegraphics[width=\linewidth]{images/Gadget.png}
-    \end{center}
-    \caption[หน้าแสดงข้อมูลอุปกรณ์เด็กรายวัน]{หน้าแสดงข้อมูลอุปกรณ์เด็กรายวัน}
-    \label{fig:Gadget}
-    \end{figure}
-
-  \begin{figure}
-    \begin{center}
-    \includegraphics[width=\linewidth]{images/checkGadget.png}
-    \end{center}
-    \caption[หน้าเช็คอุปกรณ์เด็ก]{หน้าเช็คอุปกรณ์เด็ก}
-    \label{fig:CheckGadget}
-    \end{figure}
+  
   \item  Stock คือ หน้าจัดการคลังสินค้าใน nursery โดยที่มีหน้านี้เป็นหน้าหลักของการทำงานระบบคลังสินค้า(รูปที่~\ref{fig:Stock}) โดยที่หน้าคลังสินค้าหลักจะแสดงข้อมูลของที่ทาง nursery มีว่ามีจำนวนทั้งหมดกี่ชิ้น มีของอะไรบ้าง และหน้านี้จะมีปุ่มให้เลือกใช้
   อยู่สามปุ่มหลัก คือ ปุ่มประวัติ, ปุ่มราคาของในคลัง, แก้ไข 
   
@@ -221,43 +86,6 @@
   
   ส่วนแก้ไข(รูป~\ref{fig:CheckStock}) จะแสดงข้อมูลจำนวนของใน nursery (ค่าเริ่มต้นจะเป็นไซส์ S) สามารถเลือกไซส์ที่ต้องการดูข้อมูลด้วยการ เลือกจากinputทางด้านขวาบน ในส่วนของการแก้ไขจำนวนสามารถทำได้ด้วย การกดปุ่มบวกหรือลบตามที่ผู้ใช้ต้องการ หากต้องการเพิ่มของให้กดบวก จากนั้นก็กรอกค่าที่ต้องการเพิ่ม
   โดยค่าที่กรอกจะไปบวกเพิ่มกับค่าเก่าที่แสดงให้เห็นกดหน้าที่จะกดบวก ในส่วนของการลดจำนวนของให้กดที่ปุ่มลบ จากนั้นก็กรอกค่าที่ต้องการลด โดยค่าที่กรอกจะไปลบกับค่าเก่าที่แสดงให้เห็นกดหน้าที่จะกดลบ จากนั้นกดยืนยันเป็นอันเสร็จสิ้น
-
-  
-    \begin{figure}
-      \begin{center}
-      \includegraphics[width=\linewidth]{images/Stock.png}
-      \end{center}
-      \caption[หน้าแสดงคลังสินค้า]{หน้าแสดงคลังสินค้า}
-      \label{fig:Stock}
-      \end{figure}
-  
-  
-    \begin{figure}
-      \begin{center}
-      \includegraphics[width=\linewidth]{images/handleStock.png}
-      \end{center}
-      \caption[หน้าจัดการแก้ไขสต็อกของ]{หน้าจัดการแก้ไขสต็อกของ}
-      \label{fig:CheckStock}
-      \end{figure}
-  
-  
-  
-    \begin{figure}
-      \begin{center}
-      \includegraphics[width=\linewidth]{images/editPrice.png}
-      \end{center}
-      \caption[หน้าจัดการแก้ไขราคาสินค้า]{หน้าจัดการแก้ไขราคาสินค้า}
-      \label{fig:editPrice}
-      \end{figure}
-  
-  
-    \begin{figure}
-      \begin{center}
-      \includegraphics[width=\linewidth]{images/historyStock.png}
-      \end{center}
-      \caption[หน้าแสดงประวัติการเพิ่มลดของ]{หน้าแสดงประวัติการเพิ่มลดของ}
-      \label{fig:HistoryStock}
-    \end{figure}
   
   \item  Payment คือ หน้าที่ใช้จัดการกับใบแจ้งยอด(ค้างชำระ)กับใบเสร็จ(ชำระแล้ว) ประวัติการจ่ายเงินค่าภายในnursery หน้าหลักสำหรับระบบบัญชี(รูปที่~\ref{fig:Payment}) หน้านนี้จะแสดงข้อมูลtransactionของทาง nursery (ค่าเริ่มต้นจะเป็นสถานะค้างชำระ) สามารถเปลี่ยนสถานะสำหรับการแสดงผลได้ โดยเลือกที่ input ทางมุมซ้าย 
   การเพิ่มtransaction สามารถทำได้ผ่านหน้าประวัติ(รูป~\ref{fig:Profile}) จากนั้นเลือกเด็กที่ต้องการจะทำรายการ เมื่อเลือกได้แล้วให้กดที่ปุ่มสีเขียว
@@ -270,50 +98,6 @@
   ให้ผู้ใช้เลือกสถานะเป็นชำระแล้ว หลังจากนั้นให้เลือกรายการที่ต้องการพิมพ์ เมื่อเลือกเสร็จให้กดที่ปุ่มสีฟ้า
   หลังจากนั้นระบบจะนำผู้ใช้ไปยังหน้าพิมพ์ใบเสร็จ (รูป~\ref{fig:slipPage}) 
 
-  \begin{figure}
-    \begin{center}
-    \includegraphics[width=\linewidth]{images/Payment.png}
-    \end{center}
-    \caption[หน้าแสดงรายการบัญชี]{หน้าแสดงรายการบัญชี}
-    \label{fig:Payment}
-  
-    \end{figure}
-
-
-
-
-  \begin{figure}
-    \begin{center}
-    \includegraphics[scale=0.75]{images/CreatePayment.png}
-    \end{center}
-    \caption[หน้าเพิ่มรายการบัญชี]{หน้าเพิ่มรายการบัญชี}
-    \label{fig:CreatePayment}
-    \end{figure}
-
-
-  \begin{figure}
-    \begin{center}
-    \includegraphics[scale=0.75]{images/UpdatePayment.png}
-    \end{center}
-    \caption[หน้าชำระค่าใช้จ่าย]{หน้าชำระค่าใช้จ่าย}
-    \label{fig:updatePayment}
-    \end{figure}
-
-    \begin{figure}
-      \begin{center}
-      \includegraphics[width=\linewidth]{images/invoicePage.png}
-      \end{center}
-      \caption[หน้าปริ้นใบแจ้งยอด]{หน้าปริ้นใบแจ้งยอด}
-      \label{fig:invoicePage}
-      \end{figure}
-
-    \begin{figure}
-      \begin{center}
-      \includegraphics[width=\linewidth]{images/slipPage.png}
-      \end{center}
-      \caption[หน้าปริ้นใบเสร็จ]{หน้าปริ้นใบเสร็จ}
-      \label{fig:slipPage}
-      \end{figure}
 \end{itemize}
 \CIreply{ย้ายรูปมาแทรกในส่วนของ text ให้เหมาะสม}
 
@@ -387,3 +171,210 @@
       \label{fig:ApiDocs2}
     \end{figure}
   \end{landscape}
+
+  \begin{figure}
+    \begin{center}
+    \includegraphics[width=\linewidth]{images/RegisterForm.png}
+    \end{center}
+    \caption[หน้ากรอกข้อมูลเด็ก]{หน้ากรอกข้อมูลเด็ก}
+    \label{fig:register}
+  \end{figure}
+
+
+  \begin{figure}
+    \begin{center}
+    \includegraphics[width=\linewidth]{images/fatherForm.png}
+    \end{center}
+    \caption[หน้ากรอกข้อมูลบิดา]{หน้ากรอกข้อมูลบิดา}
+    \label{fig:fatherForm}
+  \end{figure}
+
+
+  \begin{figure}
+    \begin{center}
+    \includegraphics[width=\linewidth]{images/motherForm.png}
+    \end{center}
+    \caption[หน้ากรอกข้อมูลมารดา]{หน้ากรอกข้อมูลมารดา}
+    \label{fig:motherForm}
+  \end{figure}
+
+
+  \begin{figure}
+    \begin{center}
+    \includegraphics[width=\linewidth]{images/guardiansForm.png}
+    \end{center}
+    \caption[หน้ากรอกข้อมูลผู้ปกครอง]{หน้ากรอกข้อมูลผู้ปกครอง}
+    \label{fig:guardiansForm}
+  \end{figure}
+
+
+  \begin{figure}
+    \begin{center}
+    \includegraphics[width=\linewidth]{images/addressForm.png}
+    \end{center}
+    \caption[หน้ากรอกข้อมูลที่อยู่]{หน้ากรอกข้อมูลที่อยู่}
+    \label{fig:addressForm}
+  \end{figure}
+
+  \begin{figure}
+    \begin{center}
+    \includegraphics[width=\linewidth]{images/Profile.png}
+    \end{center}
+    \caption[หน้าประวัติเด็ก]{หน้าประวัติเด็ก}
+    \label{fig:Profile}
+  \end{figure}
+
+
+
+  \begin{figure}
+    \begin{center}
+    \includegraphics[width=\linewidth]{images/ProfileInfo.png}
+    \end{center}
+    \caption[หน้าประวัติส่วนตัวเด็ก]{หน้าประวัติส่วนตัวเด็ก}
+    \label{fig:ProfileTwo}
+  \end{figure}
+
+
+  \begin{figure}
+    \begin{center}
+    \includegraphics[width=\linewidth]{images/updateProfile.png}
+    \end{center}
+    \caption[หน้าแก้ไขข้อมูลเด็ก]{หน้าแก้ไขข้อมูลเด็ก}
+    \label{fig:UpdateProfile}
+    \end{figure}
+
+
+
+  \begin{figure}
+    \begin{center}
+    \includegraphics[width=\linewidth]{images/ChartPage.png}
+    \end{center}
+    \caption[หน้าแสดงข้อมูลรายเดือนเด็ก]{หน้าแสดงข้อมูลรายเดือนเด็ก}
+    \label{fig:ChartPage}
+  \end{figure}
+
+  \begin{figure}
+    \begin{center}
+    \includegraphics[width=\linewidth]{images/Attendance.png}
+    \end{center}
+    \caption[หน้าแสดงการเข้าเรียนเด็ก]{หน้าแสดงการเข้าเรียนเด็ก}
+    \label{fig:Attendance}
+  \end{figure}
+
+
+
+  \begin{figure}
+    \begin{center}
+    \includegraphics[width=\linewidth]{images/checkAttendance.png}
+    \end{center}
+    \caption[หน้าเช็คชื่อเด็ก]{หน้าเช็คชื่อเด็ก}
+    \label{fig:CheckAttendance}
+  \end{figure}
+
+  \begin{figure}
+    \begin{center}
+    \includegraphics[width=\linewidth]{images/Health.png}
+    \end{center}
+    \caption[หน้าแสดงข้อมูลสุขภาพเด็กรายวัน]{หน้าแสดงข้อมูลสุขภาพเด็กรายวัน}
+    \label{fig:Health}
+    \end{figure}
+
+  \begin{figure}
+    \begin{center}
+    \includegraphics[width=\linewidth]{images/checkHealth.png}
+    \end{center}
+    \caption[หน้าเช็คสุขภาพเด็ก]{หน้าเช็คสุขภาพเด็ก}
+    \label{fig:CheckHealth}
+    \end{figure}
+
+    \begin{figure}
+      \begin{center}
+      \includegraphics[width=\linewidth]{images/Gadget.png}
+      \end{center}
+      \caption[หน้าแสดงข้อมูลอุปกรณ์เด็กรายวัน]{หน้าแสดงข้อมูลอุปกรณ์เด็กรายวัน}
+      \label{fig:Gadget}
+      \end{figure}
+  
+    \begin{figure}
+      \begin{center}
+      \includegraphics[width=\linewidth]{images/checkGadget.png}
+      \end{center}
+      \caption[หน้าเช็คอุปกรณ์เด็ก]{หน้าเช็คอุปกรณ์เด็ก}
+      \label{fig:CheckGadget}
+      \end{figure}
+      \begin{figure}
+        \begin{center}
+        \includegraphics[width=\linewidth]{images/Stock.png}
+        \end{center}
+        \caption[หน้าแสดงคลังสินค้า]{หน้าแสดงคลังสินค้า}
+        \label{fig:Stock}
+        \end{figure}
+    
+    
+      \begin{figure}
+        \begin{center}
+        \includegraphics[width=\linewidth]{images/handleStock.png}
+        \end{center}
+        \caption[หน้าจัดการแก้ไขสต็อกของ]{หน้าจัดการแก้ไขสต็อกของ}
+        \label{fig:CheckStock}
+        \end{figure}
+    
+    
+    
+      \begin{figure}
+        \begin{center}
+        \includegraphics[width=\linewidth]{images/editPrice.png}
+        \end{center}
+        \caption[หน้าจัดการแก้ไขราคาสินค้า]{หน้าจัดการแก้ไขราคาสินค้า}
+        \label{fig:editPrice}
+        \end{figure}
+    
+    
+      \begin{figure}
+        \begin{center}
+        \includegraphics[width=\linewidth]{images/historyStock.png}
+        \end{center}
+        \caption[หน้าแสดงประวัติการเพิ่มลดของ]{หน้าแสดงประวัติการเพิ่มลดของ}
+        \label{fig:HistoryStock}
+      \end{figure}
+      \begin{figure}
+        \begin{center}
+        \includegraphics[width=\linewidth]{images/Payment.png}
+        \end{center}
+        \caption[หน้าแสดงรายการบัญชี]{หน้าแสดงรายการบัญชี}
+        \label{fig:Payment}
+      
+        \end{figure}
+    
+      \begin{figure}
+        \begin{center}
+        \includegraphics[scale=0.5]{images/CreatePayment.png}
+        \end{center}
+        \caption[หน้าเพิ่มรายการบัญชี]{หน้าเพิ่มรายการบัญชี}
+        \label{fig:CreatePayment}
+        \end{figure}
+    
+    
+      \begin{figure}
+        \begin{center}
+        \includegraphics[scale=0.5]{images/UpdatePayment.png}
+        \end{center}
+        \caption[หน้าชำระค่าใช้จ่าย]{หน้าชำระค่าใช้จ่าย}
+        \label{fig:updatePayment}
+        \end{figure}
+    
+        \begin{figure}
+          \begin{center}
+          \includegraphics[width=\linewidth]{images/invoicePage.png}
+          \end{center}
+          \caption[หน้าปริ้นใบแจ้งยอด]{หน้าปริ้นใบแจ้งยอด}
+          \label{fig:invoicePage}
+          \end{figure}
+    
+        \begin{figure}
+          \begin{center}
+          \includegraphics[width=\linewidth]{images/slipPage.png}
+          \end{center}
+          \caption[หน้าปริ้นใบเสร็จ]{หน้าปริ้นใบเสร็จ}
+          \label{fig:slipPage}
+          \end{figure}
